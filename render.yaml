@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: sluurp
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: SLUURP_LICENSE
+        sync: false
